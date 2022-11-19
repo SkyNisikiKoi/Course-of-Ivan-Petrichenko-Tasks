@@ -24,7 +24,7 @@
 // const length = 7;
 
 // for (let i = 1; i < length; i++){
-    
+
 //     for(let j = 0; j<i; j++){
 //         result += '*';
 //     }
@@ -71,7 +71,7 @@
 //         console.log(i);
 //         i++;
 //     }
-    
+
 // }
 
 // // При помощи цикла for вывести числа от 20 до 10 в консоль. В обратном порядке (20, 19, 18...). Когда цикл дойдет до числа 13 - остановить весь цикл
@@ -85,15 +85,15 @@
 // }
 
 // function secondTask() {
- 
+
 //     for (let i = 20; i > 10; i--) {
-    
+
 //    if (i === 13) {
 //     break;
 //    }
 //    console.log(i);
 // }
-    
+
 // }
 
 // // При помощи цикла for выведите чётные числа от 2 до 10 включительно
@@ -110,16 +110,16 @@
 // function thirdTask() {
 
 //    for (let i = 2; i <= 10; i++) {
-    
+
 //     if (i % 2 === 0) {
 //       console.log(i);  
 //     }
-    
+
 // }}
 // // Перепишите цикл  for на вариант с while. Результат должен остаться точно таким же. Не создайте бесконечный цикл! Иначе браузер может зависнуть.
 
 // //  Цикл, который нужно переписать:
- 
+
 // //  for (let i = 2; i <= 16; i++) {
 // //      if (i % 2 === 0) {
 // //          continue;
@@ -161,7 +161,7 @@
 //  }
 
 //  console.log(arrayOfNumbers);
-    
+
 //     // Не трогаем
 //     return arrayOfNumbers;
 // };
@@ -195,7 +195,7 @@
 //     } else {
 //         dataChange[i] = data[i]*2;
 //     }
-    
+
 // }
 
 // console.log(dataChange);
@@ -208,7 +208,7 @@
 // for (let i = 0; i < dataTwo.length; i++) {
 
 //         dataChangeSecond[(dataTwo.length - 1) - i] = dataTwo[i];
-    
+
 // }
 
 // console.log(dataChangeSecond);
@@ -290,7 +290,7 @@
 //     console.log( getMathResult(10, '5'))
 //     console.log( getMathResult(10, 0))
 //     console.log( getMathResult(20, -5))
- 
+
 // Примеры:
 
 // Вызов функции getMathResult(5, 3) даст ответ 5---10---15
@@ -312,35 +312,149 @@
 
 //Tasks fir-tree
 
-const lines = 5;
-let result = '';
+// const lines = 5;
+// let result = '';
 
 
-for (let i = 1; i < 7; i++){
-    
-    for (let k = 6; k > i; k--) {
-        result += ' ';
+// for (let i = 1; i < 7; i++){
+
+//     for (let k = 6; k > i; k--) {
+//         result += ' ';
+//     }
+
+//     for(let j = 0; j < 2 * i - 1; j++){
+//         result += '*';
+//     }
+
+//     result += '\n';
+
+// }
+
+// console.log(result);
+
+
+// for (let i = 0; i <= lines; i++) {
+//     for (let j = 0; j < lines - i; j++) {
+//         result += " ";
+//     }
+//     for (let j = 0; j < 2 * i + 1; j++) {
+//         result += "*";
+//     }
+//     result += "\n";
+// }
+
+// console.log(result)
+
+// Задачи:
+
+// 1) Создайте функцию, которая будет вычислять объем и площадь полной поверхности куба 
+//(тоже базовая математика, иногда используется в создании анимаций). 
+//Эта функция принимает в себя целое число со значением длины ребра куба. Ответ выведите в формате строки, который изображен в примерах.
+
+// Если в функцию попал неправильный аргумент или вычислить значения невозможно - вернуть строку "При вычислении произошла ошибка"
+
+// НЕ ИСПОЛЬЗУЙТЕ ОПЕРАТОР СТЕПЕНИ ** - в онлайн среде браузера он не работает и тесты будут ломаться. 
+//Это из-за того, что этот оператор из более нового стандарта, чем тут доступен.
+
+// Примеры:
+
+// calculateVolumeAndArea(5)  => 'Объем куба: 125, площадь всей поверхности: 150'
+
+// calculateVolumeAndArea(15)  => 'Объем куба: 3375, площадь всей поверхности: 1350'
+
+// calculateVolumeAndArea(15.5)  => 'При вычислении произошла ошибка'
+
+// calculateVolumeAndArea('15')  => 'При вычислении произошла ошибка'
+
+// calculateVolumeAndArea(-15)  => 'При вычислении произошла ошибка'
+
+
+
+function calculateVolumeAndArea(n) {
+
+    let cubeArea = 0;
+    let cubeVolume = 0;
+
+    if (typeof n !== "string" && Number.isInteger(n) !== false && Math.sign(n) > 0) {
+        cubeVolume = Math.pow(n, 3);
+        cubeArea = 6 * Math.pow(n, 2); 
+        console.log(`Объем куба: ${cubeVolume}, площадь всей поверхности: ${cubeArea}`)
+    } else {
+        console.log('При вычислении произошла ошибка')
     }
-
-    for(let j = 0; j < 2 * i - 1; j++){
-        result += '*';
-    }
-
-    result += '\n';
 
 }
 
-console.log(result);
+// // function calculateVolumeAndArea(result) {
+// //     if (typeof result === Number) {
+// //         return ('Объем куба: ' + String(result*result*result) + ', площадь всей поверхности: ' + String(6*result*result)); 
+// //     } else {
+// //         return ('При вычислении произошла ошибка');
+// //     }
+
+// // }
+
+calculateVolumeAndArea(5)
+calculateVolumeAndArea(15)
+calculateVolumeAndArea(15.5)
+calculateVolumeAndArea('15')
+calculateVolumeAndArea(-15)
+
+// Напишите функцию, которая будет определять номер купе по переданному ей номеру места. 
+// Функция принимает только целое число от 1 до 36.
+
+// Если переданный аргумент не число, отрицательное или дробное - возвращается сообщение:
+
+// "Ошибка. Проверьте правильность введенного номера места"
+
+// Если число 0 или больше 36, то сообщение: "Таких мест в вагоне не существует"
+
+// Пример:
+
+// getCoupeNumber(33)  => 9
+
+// getCoupeNumber(7)  => 2
+
+// getCoupeNumber(300)  => "Таких мест в вагоне не существует"
+
+// getCoupeNumber(0)  => "Таких мест в вагоне не существует"
+
+// getCoupeNumber(7.7)  => "Ошибка. Проверьте правильность введенного номера места"
+
+// getCoupeNumber(-10)  => "Ошибка. Проверьте правильность введенного номера места"
+
+// getCoupeNumber('Hello')  => "Ошибка. Проверьте правильность введенного номера места"
 
 
-for (let i = 0; i <= lines; i++) {
-    for (let j = 0; j < lines - i; j++) {
-        result += " ";
+function getCoupeNumber(n) {
+
+    let result = 0;
+
+    if (n > 36 || n === 0) {
+        console.log("Таких мест в вагоне не существует")
+    } else if (typeof n === "string" || Number.isInteger(n) === false || Math.sign(n) < 0) {
+        console.log("Ошибка. Проверьте правильность введенного номера места")
+    } else if (n % 4 === 0) {
+        result = n / 4;
+        console.log(result)
+    } else if (n % 4 === 1) {
+        result = (n + 3) / 4;
+        console.log(result)
+    } else if (n % 4 === 2) {
+        result = (n + 2) / 4;
+        console.log(result)
     }
-    for (let j = 0; j < 2 * i + 1; j++) {
-        result += "*";
+    else if (n % 4 === 3) {
+        result = (n + 1) / 4;
+        console.log(result)
     }
-    result += "\n";
 }
 
-console.log(result)
+// getCoupeNumber(33)
+// getCoupeNumber(7)
+// getCoupeNumber(300)
+getCoupeNumber(0)
+// getCoupeNumber(7.7)
+getCoupeNumber(-10)
+// getCoupeNumber('Hello')
+
