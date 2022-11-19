@@ -172,46 +172,46 @@
 // Заполните новый массив (result) числами из старого (arr). Количество элементов в массиве можно получить как arr.length, а к элементам обращаемся все так же: arr[0], arr[1] и тд.
 // Должен получиться точно такой же массив
 
-const arr = [3, 5, 8, 16, 20, 23, 50];
-const result = [];
+// const arr = [3, 5, 8, 16, 20, 23, 50];
+// const result = [];
 
-for (let i = 0; i < arr.length; i++) {
-    result[i] = arr[i];
-}
+// for (let i = 0; i < arr.length; i++) {
+//     result[i] = arr[i];
+// }
 
-console.log(result);
+// console.log(result);
 
-// Измените данный массив так, чтобы все числа были увеличены в 2 раза, а если попадается строка строка - то к ней было добавлено " - done".
-// Для определения типа данных используйте typeof();
-// Должно получиться: [ 10, 20, 'Shopping - done', 40, 'Homework - done' ]
+// // Измените данный массив так, чтобы все числа были увеличены в 2 раза, а если попадается строка строка - то к ней было добавлено " - done".
+// // Для определения типа данных используйте typeof();
+// // Должно получиться: [ 10, 20, 'Shopping - done', 40, 'Homework - done' ]
 
-const data = [5, 10, 'Shopping', 20, 'Homework'];
-const dataChange = [];
+// const data = [5, 10, 'Shopping', 20, 'Homework'];
+// const dataChange = [];
 
-for (let i = 0; i < data.length; i++) {
+// for (let i = 0; i < data.length; i++) {
 
-    if (typeof(data[i]) === "string" ) {
-        dataChange[i] = data[i]+`${' - done'}`;
-    } else {
-        dataChange[i] = data[i]*2;
-    }
+//     if (typeof(data[i]) === "string" ) {
+//         dataChange[i] = data[i]+`${' - done'}`;
+//     } else {
+//         dataChange[i] = data[i]*2;
+//     }
     
-}
+// }
 
-console.log(dataChange);
+// console.log(dataChange);
 
-// Разверните массив data наоборот при помощи цикла и запишите данные в массив result.
-// Должно получиться: [ 'Homework', 20, 'Shopping', 10, 5 ]
-const dataTwo = [5, 10, 'Shopping', 20, 'Homework'];
-const dataChangeSecond = [];
+// // Разверните массив data наоборот при помощи цикла и запишите данные в массив result.
+// // Должно получиться: [ 'Homework', 20, 'Shopping', 10, 5 ]
+// const dataTwo = [5, 10, 'Shopping', 20, 'Homework'];
+// const dataChangeSecond = [];
 
-for (let i = 0; i < dataTwo.length; i++) {
+// for (let i = 0; i < dataTwo.length; i++) {
 
-        dataChangeSecond[(dataTwo.length - 1) - i] = dataTwo[i];
+//         dataChangeSecond[(dataTwo.length - 1) - i] = dataTwo[i];
     
-}
+// }
 
-console.log(dataChangeSecond);
+// console.log(dataChangeSecond);
 
 
 // Через определенное количество уроков вы убедитесь, что эти задачи можно решить чуть проще, без использования циклов. 
@@ -220,76 +220,76 @@ console.log(dataChangeSecond);
 
 // Задачи:
 
-// 1) Создайте функцию, которая будет на вход принимать 1 аргумент с именем человека и возвращать строку.
+// // 1) Создайте функцию, которая будет на вход принимать 1 аргумент с именем человека и возвращать строку.
 
-// Пример: вызов функции sayHello('Антон') возвращает строку "Привет, Антон!". В решении вызывать функцию не нужно, программа сделает это за вас.
+// // Пример: вызов функции sayHello('Антон') возвращает строку "Привет, Антон!". В решении вызывать функцию не нужно, программа сделает это за вас.
 
-function sayHello(name) {
-    return `Привет, ${name}!`
-}
-
-
-function sayHello(name) {
-    return 'Привет, ' + String (name) + '!';
-}
-
-console.log(sayHello('Антон'))
-
-// 2) Создайте функцию, которая принимает в себя 1 аргумент в виде целого числа и возвращает массив из трех чисел: одно на 1 меньше, сам аргумент, и число на 1 больше.
-
-// Пример: вызов функции returnNeighboringNumbers(5) возвращает массив в виде [4, 5, 6].
+// function sayHello(name) {
+//     return `Привет, ${name}!`
+// }
 
 
-function returnNeighboringNumbers(n) {
-    const arr = []
+// function sayHello(name) {
+//     return 'Привет, ' + String (name) + '!';
+// }
 
-    arr[0] = n-1;
-    arr[1] = n;
-    arr[2] = n+1
-    return arr;
-}
+// console.log(sayHello('Антон'))
 
-function returnNeighboringNumbers(number) {
-    return  [number - 1, number, number + 1];
-    }
+// // 2) Создайте функцию, которая принимает в себя 1 аргумент в виде целого числа и возвращает массив из трех чисел: одно на 1 меньше, сам аргумент, и число на 1 больше.
 
-console.log(returnNeighboringNumbers(5))
-
-// 3) Создайте функцию, которая будет принимать в себя 2 аргумента, оба числа. Первое число - это база, второе число - 
-// это сколько раз нужно будет повторить это число в прогрессии. (Смотри пример ниже). Функция должна возвращать строку (или число в особых случаях, о которых ниже), 
-// где эти числа идут по порядку, разделенные тремя дефисами "---". После последнего числа их не должно быть.
-
-// Если второй аргумент не является числом, равен или меньше нуля - то возвращать просто первый аргумент. (Проверяем через оператор typeof)
+// // Пример: вызов функции returnNeighboringNumbers(5) возвращает массив в виде [4, 5, 6].
 
 
-function getMathResult(x, y) {
+// function returnNeighboringNumbers(n) {
+//     const arr = []
 
-    let result = '';
-    let n = x;
+//     arr[0] = n-1;
+//     arr[1] = n;
+//     arr[2] = n+1
+//     return arr;
+// }
 
-if (y === 0 || y < 0 || typeof(y) != 'number'){
-    return x;
-}
+// function returnNeighboringNumbers(number) {
+//     return  [number - 1, number, number + 1];
+//     }
 
-for (let i = 0; i < y; i++) {
-   if( i=== y-1){
-    result = result + `${n}`
-   } else {
-    result = result + `${n}` + '---'
-   }
-    n = n + x;
-}
+// console.log(returnNeighboringNumbers(5))
 
-return result;
-    }
+// // 3) Создайте функцию, которая будет принимать в себя 2 аргумента, оба числа. Первое число - это база, второе число - 
+// // это сколько раз нужно будет повторить это число в прогрессии. (Смотри пример ниже). Функция должна возвращать строку (или число в особых случаях, о которых ниже), 
+// // где эти числа идут по порядку, разделенные тремя дефисами "---". После последнего числа их не должно быть.
 
-    console.log( getMathResult(5, 3))
-    console.log( getMathResult(3, 10))
-    console.log( getMathResult(10, 5))
+// // Если второй аргумент не является числом, равен или меньше нуля - то возвращать просто первый аргумент. (Проверяем через оператор typeof)
 
-    console.log( getMathResult(10, '5'))
-    console.log( getMathResult(10, 0))
-    console.log( getMathResult(20, -5))
+
+// function getMathResult(x, y) {
+
+//     let result = '';
+//     let n = x;
+
+// if (y === 0 || y < 0 || typeof(y) != 'number'){
+//     return x;
+// }
+
+// for (let i = 0; i < y; i++) {
+//    if( i=== y-1){
+//     result = result + `${n}`
+//    } else {
+//     result = result + `${n}` + '---'
+//    }
+//     n = n + x;
+// }
+
+// return result;
+//     }
+
+//     console.log( getMathResult(5, 3))
+//     console.log( getMathResult(3, 10))
+//     console.log( getMathResult(10, 5))
+
+//     console.log( getMathResult(10, '5'))
+//     console.log( getMathResult(10, 0))
+//     console.log( getMathResult(20, -5))
  
 // Примеры:
 
@@ -309,3 +309,38 @@ return result;
 // проверять их и продумывать логику работы внутри. Обратите внимание на прогрессию, она рассчитывается по простой формуле умножения. 
 // Если первый аргумент 5, а второй 3, то число повторяется 3 раза, каждый раз увеличиваясь на само себя. 
 // Это базовая математика, которая и нужна для работы в 95% случае на фронтенде.
+
+//Tasks fir-tree
+
+const lines = 5;
+let result = '';
+
+
+for (let i = 1; i < 7; i++){
+    
+    for (let k = 6; k > i; k--) {
+        result += ' ';
+    }
+
+    for(let j = 0; j < 2 * i - 1; j++){
+        result += '*';
+    }
+
+    result += '\n';
+
+}
+
+console.log(result);
+
+
+for (let i = 0; i <= lines; i++) {
+    for (let j = 0; j < lines - i; j++) {
+        result += " ";
+    }
+    for (let j = 0; j < 2 * i + 1; j++) {
+        result += "*";
+    }
+    result += "\n";
+}
+
+console.log(result)
