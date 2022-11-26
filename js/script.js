@@ -561,9 +561,5 @@ function findMaxNumber (first, second, third, fourth) {
 
         console.log(result)
         return result; 
-    
-// getTimeFromMinutes(-150) => "Ошибка, проверьте данные"
-
-function getTimeFromMinutes() {
-    
+    }
 }
