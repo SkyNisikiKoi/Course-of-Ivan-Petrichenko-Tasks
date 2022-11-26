@@ -501,6 +501,8 @@
 // getTimeFromMinutes(50) => "Это 0 часов и 50 минут"
 
 // getTimeFromMinutes(0) => "Это 0 часов и 0 минут"
+// Так как проверки на большие числа будут раздувать код (33 часа, 31 час, 11 часов и тд). 
+// Этого будет достаточно и код будет проверять именно этот промежуток (1 - 10 часов). Но вы можете реализовать и полный скрипт, он тоже должен проходить тесты.
 
 // getTimeFromMinutes(-150) => "Ошибка, проверьте данные"
 
@@ -559,7 +561,9 @@ function findMaxNumber (first, second, third, fourth) {
 
         console.log(result)
         return result; 
-    }
+    
+// getTimeFromMinutes(-150) => "Ошибка, проверьте данные"
+
+function getTimeFromMinutes() {
     
 }
-
