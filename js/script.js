@@ -368,38 +368,36 @@
 
 // calculateVolumeAndArea(-15)  => 'При вычислении произошла ошибка'
 
+// function calculateVolumeAndArea(n) {
 
+//     let cubeArea = 0;
+//     let cubeVolume = 0;
 
-function calculateVolumeAndArea(n) {
+//     if (typeof n !== "string" && Number.isInteger(n) !== false && Math.sign(n) > 0) {
+//         cubeVolume = Math.pow(n, 3);
+//         cubeArea = 6 * Math.pow(n, 2); 
+//         console.log(`Объем куба: ${cubeVolume}, площадь всей поверхности: ${cubeArea}`)
+//     } else {
+//         console.log('При вычислении произошла ошибка')
+//     }
 
-    let cubeArea = 0;
-    let cubeVolume = 0;
+// }
 
-    if (typeof n !== "string" && Number.isInteger(n) !== false && Math.sign(n) > 0) {
-        cubeVolume = Math.pow(n, 3);
-        cubeArea = 6 * Math.pow(n, 2); 
-        console.log(`Объем куба: ${cubeVolume}, площадь всей поверхности: ${cubeArea}`)
-    } else {
-        console.log('При вычислении произошла ошибка')
-    }
+// function calculateVolumeAndArea(length) {
+//     if (typeof (length) !== 'number' || length < 0 || !Number.isInteger(length)) {
+//         return "При вычислении произошла ошибка";
+//     }
 
-}
+//     let volume = 0,
+//         area = 0;
 
-function calculateVolumeAndArea(length) {
-    if (typeof (length) !== 'number' || length < 0 || !Number.isInteger(length)) {
-        return "При вычислении произошла ошибка";
-    }
+//     volume = length * length * length;
+//     // length ** 3 - это тоже самое, что и выше или варианты через цикл.
+//     // ** - это оператор степени, напоминаю. Но онлайн редактор его не принимает =/
+//     area = 6 * (length * length);
 
-    let volume = 0,
-        area = 0;
-
-    volume = length * length * length;
-    // length ** 3 - это тоже самое, что и выше или варианты через цикл.
-    // ** - это оператор степени, напоминаю. Но онлайн редактор его не принимает =/
-    area = 6 * (length * length);
-
-    return `Объем куба: ${volume}, площадь всей поверхности: ${area}`;
-}
+//     return `Объем куба: ${volume}, площадь всей поверхности: ${area}`;
+// }
 
 // // function calculateVolumeAndArea(result) {
 // //     if (typeof result === Number) {
@@ -410,11 +408,11 @@ function calculateVolumeAndArea(length) {
 
 // // }
 
-calculateVolumeAndArea(5)
-calculateVolumeAndArea(15)
-calculateVolumeAndArea(15.5)
-calculateVolumeAndArea('15')
-calculateVolumeAndArea(-15)
+// calculateVolumeAndArea(5)
+// calculateVolumeAndArea(15)
+// calculateVolumeAndArea(15.5)
+// calculateVolumeAndArea('15')
+// calculateVolumeAndArea(-15)
 
 // Напишите функцию, которая будет определять номер купе по переданному ей номеру места. 
 // Функция принимает только целое число от 1 до 36.
@@ -442,21 +440,22 @@ calculateVolumeAndArea(-15)
 // getCoupeNumber('Hello')  => "Ошибка. Проверьте правильность введенного номера места"
 
 
-function getCoupeNumber(n) {
+// function getCoupeNumber(n) {
 
-    let result = 0;
+//     let result = 0;
 
-    if (n > 36 || n === 0) {
-        console.log("Таких мест в вагоне не существует")
-    } else if (typeof n === "string" || Number.isInteger(n) === false || Math.sign(n) < 0) {
-        console.log("Ошибка. Проверьте правильность введенного номера места")
-    } else if (n % 4 === 0) {
-        result = n / 4;
-        console.log(result)
-    } else if (n % 4 !== 0) {
-        result = Math.trunc(n / 4 + 1)
-        console.log(result)
-    } 
+//     if (n > 36 || n === 0) {
+//         console.log("Таких мест в вагоне не существует")
+//     } else if (typeof n === "string" || Number.isInteger(n) === false || Math.sign(n) < 0) {
+//         console.log("Ошибка. Проверьте правильность введенного номера места")
+//     } else if (n % 4 === 0) {
+//         result = n / 4;
+//         console.log(result)
+//     } else if (n % 4 !== 0) {
+//         result = Math.trunc(n / 4 + 1)
+//         console.log(result)
+//     } 
+
     // else if (n % 4 === 2) {
     //     result = (n + 2) / 4;
     //     console.log(result)
@@ -465,21 +464,19 @@ function getCoupeNumber(n) {
     //     result = (n + 1) / 4;
     //     console.log(result)
     // }
-}
+// }
+// function getCoupeNumber(seatNumber) {
+//     if (typeof (seatNumber) !== 'number' || seatNumber < 0 || !Number.isInteger(seatNumber)) {
+//         return "Ошибка. Проверьте правильность введенного номера места";
+//     }
 
+//     if (seatNumber === 0 || seatNumber > 36) {
+//         return "Таких мест в вагоне не существует";
+//     }
 
-function getCoupeNumber(seatNumber) {
-    if (typeof (seatNumber) !== 'number' || seatNumber < 0 || !Number.isInteger(seatNumber)) {
-        return "Ошибка. Проверьте правильность введенного номера места";
-    }
+//     return Math.ceil(seatNumber / 4);
 
-    if (seatNumber === 0 || seatNumber > 36) {
-        return "Таких мест в вагоне не существует";
-    }
-
-    return Math.ceil(seatNumber / 4);
-    // тут очень много вариантов решения, но выбрал один из элегантных :)
-}
+// }
 // getCoupeNumber(33)
 // getCoupeNumber(7)
 // getCoupeNumber(300)
@@ -489,19 +486,80 @@ function getCoupeNumber(seatNumber) {
 // getCoupeNumber('Hello')
 
 
+// 1) Создайте функцию, которая принимает в себя целое число минут и возвращает время в нужном формате строки. 
+// (Смотри пример). Обратите внимание на окончание слова "час" - оно меняется в зависимости от цифры. 
+// Если вместо аргумента приходит не число, дробное или отрицательное число - функция возвращает строку "Ошибка, проверьте данные"
 
+// Внимание! Давайте пока ограничимся максимум 600ю минутами (10 часов). 
+// Так как проверки на большие числа будут раздувать код (33 часа, 31 час, 11 часов и тд). 
+// Этого будет достаточно и код будет проверять именно этот промежуток (1 - 10 часов). Но вы можете реализовать и полный скрипт, он тоже должен проходить тесты.
 
+// Пример:
 
-function getCoupeNumber(seatNumber) {
-    if (typeof (seatNumber) !== 'number' || seatNumber < 0 || !Number.isInteger(seatNumber)) {
-        return "Ошибка. Проверьте правильность введенного номера места";
+// getTimeFromMinutes(150) => "Это 2 часа и 30 минут"
+
+// getTimeFromMinutes(50) => "Это 0 часов и 50 минут"
+
+// getTimeFromMinutes(0) => "Это 0 часов и 0 минут"
+
+// getTimeFromMinutes(-150) => "Ошибка, проверьте данные"
+
+function getTimeFromMinutes(minutes) {
+ if(typeof (minutes) !== 'number' || minutes < 0 || !Number.isInteger(minutes)) {
+    console.log("Ошибка, проверьте данные")
+    return "Ошибка, проверьте данные";
+ }
+
+ if(minutes > 600) {
+    console.log("Число вне диапазона условий задачи")
+    return "Число вне диапазона условий задачи";
+ }
+
+ let hour = Math.trunc(minutes / 60);
+ let remainingMinutes = minutes % 60;
+
+ if (hour === 1) {
+    console.log(`Это ${hour} час и ${remainingMinutes} минут`)
+    return `Это ${hour} час и ${remainingMinutes} минут`
+ }
+
+ if (hour > 1 && hour < 5) {
+    console.log(`Это ${hour} часа и ${remainingMinutes} минут`)
+    return `Это ${hour} часа и ${remainingMinutes} минут`
+ }
+
+ if (hour > 4 || hour === 0) {
+    console.log(`Это ${hour} часов и ${remainingMinutes} минут`)
+    return `Это ${hour} часов и ${remainingMinutes} минут`
+ }
+
+}
+
+// 2) Напишите функцию, которая принимает в себя 4 числа и возвращает самое большее из них. 
+// Если один из аргументов не является числом или их меньше 4 - возвращается 0. Дробные числа разрешены.
+
+// Пример:
+
+// findMaxNumber(1, 5, 6.6, 11); =>  11
+
+// findMaxNumber(1, 5, '6', '10');  =>  0
+
+function findMaxNumber (first, second, third, fourth) {
+
+    let result = 0;
+
+    if (typeof (first) !== 'number' || typeof (second) !== 'number' || typeof (third) !== 'number' || typeof (fourth) !== 'number') {
+        console.log(result)
+        return result;
+    } else if (first === "" || second === "" || third === "" || fourth === "" ) {
+        console.log(result)
+        return result;
+    } else {
+        result = Math.max(first, second, third, fourth)
+
+        console.log(result)
+        return result; 
     }
-
-    if (seatNumber === 0 || seatNumber > 36) {
-        return "Таких мест в вагоне не существует";
-    }
-
-    return Math.ceil(seatNumber / 4);
-    // тут очень много вариантов решения, но выбрал один из элегантных :)
+    
 }
 
