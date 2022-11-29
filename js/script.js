@@ -727,19 +727,23 @@ const personalPlanPeter = {
 
 function showProgrammingLangs(plan) {
 
-    const { js, php } = plan.skills.programmingLangs;
-
     const programming = Object.keys(plan.skills.programmingLangs);
+    let result = "";
 
-    if (js === undefined || php === undefined) {
-        console.log(``);
-        return ``;
-    } else {
-        console.log(`Язык ${programming[0]} изучен на ${js}\nЯзык ${programming[1]} изучен на ${php}`);
-        return `Язык ${programming[0]} изучен на ${js}\nЯзык ${programming[1]} изучен на ${php}`;
+    for (let i = 0; i < programming.length; i++) {
+        console.log(programming)
+        console.log(i)
+        if (programming[i] === undefined) {
+            console.log(``);
+            result = result + '';
+        } else {
+            console.log(`Язык ${programming[i]} изучен на ${20}\n`);
+            result = result + `Язык ${programming[i]} изучен на ${20}\n`;
+        } 
     }
-}
 
+    return result;
+}
 
 showProgrammingLangs(personalPlanPeter)
 
