@@ -456,14 +456,14 @@
 //         console.log(result)
 //     } 
 
-    // else if (n % 4 === 2) {
-    //     result = (n + 2) / 4;
-    //     console.log(result)
-    // }
-    // else if (n % 4 === 3) {
-    //     result = (n + 1) / 4;
-    //     console.log(result)
-    // }
+// else if (n % 4 === 2) {
+//     result = (n + 2) / 4;
+//     console.log(result)
+// }
+// else if (n % 4 === 3) {
+//     result = (n + 1) / 4;
+//     console.log(result)
+// }
 // }
 // function getCoupeNumber(seatNumber) {
 //     if (typeof (seatNumber) !== 'number' || seatNumber < 0 || !Number.isInteger(seatNumber)) {
@@ -507,33 +507,33 @@
 // getTimeFromMinutes(-150) => "Ошибка, проверьте данные"
 
 function getTimeFromMinutes(minutes) {
- if(typeof (minutes) !== 'number' || minutes < 0 || !Number.isInteger(minutes)) {
-    console.log("Ошибка, проверьте данные")
-    return "Ошибка, проверьте данные";
- }
+    if (typeof (minutes) !== 'number' || minutes < 0 || !Number.isInteger(minutes)) {
+        console.log("Ошибка, проверьте данные")
+        return "Ошибка, проверьте данные";
+    }
 
- if(minutes > 600) {
-    console.log("Число вне диапазона условий задачи")
-    return "Число вне диапазона условий задачи";
- }
+    if (minutes > 600) {
+        console.log("Число вне диапазона условий задачи")
+        return "Число вне диапазона условий задачи";
+    }
 
- let hour = Math.trunc(minutes / 60);
- let remainingMinutes = minutes % 60;
+    let hour = Math.trunc(minutes / 60);
+    let remainingMinutes = minutes % 60;
 
- if (hour === 1) {
-    console.log(`Это ${hour} час и ${remainingMinutes} минут`)
-    return `Это ${hour} час и ${remainingMinutes} минут`
- }
+    if (hour === 1) {
+        console.log(`Это ${hour} час и ${remainingMinutes} минут`)
+        return `Это ${hour} час и ${remainingMinutes} минут`
+    }
 
- if (hour > 1 && hour < 5) {
-    console.log(`Это ${hour} часа и ${remainingMinutes} минут`)
-    return `Это ${hour} часа и ${remainingMinutes} минут`
- }
+    if (hour > 1 && hour < 5) {
+        console.log(`Это ${hour} часа и ${remainingMinutes} минут`)
+        return `Это ${hour} часа и ${remainingMinutes} минут`
+    }
 
- if (hour > 4 || hour === 0) {
-    console.log(`Это ${hour} часов и ${remainingMinutes} минут`)
-    return `Это ${hour} часов и ${remainingMinutes} минут`
- }
+    if (hour > 4 || hour === 0) {
+        console.log(`Это ${hour} часов и ${remainingMinutes} минут`)
+        return `Это ${hour} часов и ${remainingMinutes} минут`
+    }
 
 }
 
@@ -546,21 +546,21 @@ function getTimeFromMinutes(minutes) {
 
 // findMaxNumber(1, 5, '6', '10');  =>  0
 
-function findMaxNumber (first, second, third, fourth) {
+function findMaxNumber(first, second, third, fourth) {
 
     let result = 0;
 
     if (typeof (first) !== 'number' || typeof (second) !== 'number' || typeof (third) !== 'number' || typeof (fourth) !== 'number') {
         console.log(result)
         return result;
-    } else if (first === "" || second === "" || third === "" || fourth === "" ) {
+    } else if (first === "" || second === "" || third === "" || fourth === "") {
         console.log(result)
         return result;
     } else {
         result = Math.max(first, second, third, fourth)
 
         console.log(result)
-        return result; 
+        return result;
     }
 }
 
@@ -591,82 +591,164 @@ function findMaxNumber (first, second, third, fourth) {
 
 // fib(0) => ''"
 
-function fib(integer) {
+// function fib(integer) {
 
-    result = '';
-    numbersFi = [0, 1];
+// result = '';
+// numbersFi = [0, 1];
 
-    if (typeof (integer) !== 'number' || integer === 0 ) {
-        console.log(result)
-        return result;
+// if (typeof (integer) !== 'number' || integer === 0 ) {
+//     console.log(result)
+//     return result;
+// }
+
+// if (integer === 1) {
+//     result = '0';
+//     console.log(result)
+//     return result;
+// }
+
+// if (integer === 2) {
+//     result = '0 1';
+//     console.log(result)
+//     return result;
+// }
+
+// for(i = 1; i < integer-1; i++) {
+
+//     numbersFi.push(numbersFi[i] + numbersFi[i-1]);
+//     result = numbersFi.toString();
+//     result = result.replace(/,/g, ' ');
+// }
+
+// console.log(result);
+// return result;
+// }
+
+
+// fib(5)
+
+// function fib(num) {
+//     if (typeof(num) !== 'number' || num <= 0 || !Number.isInteger(num)) {
+//         return "";
+//     }
+
+//     let result = '';
+//     let first = 0;
+//     let second = 1;
+
+//     for (let i = 0; i < num; i++) {
+//         if (i + 1 === num) {
+//             result += `${first}`;
+//             // Без пробела в конце
+//         } else {
+//             result += `${first} `;
+//         }
+
+//         let third = first + second;
+//         first = second;
+//         second = third;
+//     }
+
+//     console.log(result);
+//     return result;
+// }
+
+// fib(5)
+
+// // Напишите функцию fib(n) которая возвращает n-е число Фибоначчи.
+
+// function fib(n) { 
+//     const result = [0, 1];
+
+//     for(i = 1; i <= n; i++) {
+//         result.push(result[i] + result[i-1]);
+//     }
+
+//     console.log(result[n]);
+//  }
+
+// fib(3); 
+// fib(7); 
+// fib(77); // 5527939700884757
+
+// Задачи:
+
+// 1) Напишите функцию showExperience, которая будет принимать в себя объект со всеми данными и возвращать строку с опытом.
+
+// Пример:
+
+// showExperience(personalPlanPeter) => '1 month'
+
+// P.S. желательно использовать деструктуризацию, но не обязательно
+
+// function showExperience (plan) {
+
+//     const {exp} = plan.skills;
+
+//     console.log(exp);
+//     return exp;
+// };
+
+// showExperience(personalPlanPeter);
+
+// 2) Напишите функцию showProgrammingLangs, которая будет принимать в себя объект со всеми данными и возвращать строку в нужном виде.
+
+// Пример:
+
+// showProgrammingLangs(personalPlanPeter)  =>
+
+// "Язык js изучен на 20% Язык php изучен на 10%"
+
+// Причем функция должна работать вне зависимости от количества языков. Если ни один не указан, то возвращается пустая строка.
+
+// P.S. Для переноса строки используется \n в конце строки.
+
+const personalPlanPeter = {
+    name: "Peter",
+    age: "29",
+    skills: {
+        languages: ['ru', 'eng'],
+        programmingLangs: {
+            js: '20%',
+            php: '10%'
+        },
+        exp: '1 month'
+    },
+    showAgeAndLangs: function(plan) {
+        const { languages } = plan.skills;
+
+        const languagesUp = languages.join(' ').toUpperCase();
+
+        console.log(`Мне 29 и я владею языками: ${languagesUp}`);
+        return `Мне 29 и я владею языками: ${languagesUp}`;
     }
+};
 
-    if (integer === 1) {
-        result = '0';
-        console.log(result)
-        return result;
+
+function showProgrammingLangs(plan) {
+
+    const { js, php } = plan.skills.programmingLangs;
+
+    const programming = Object.keys(plan.skills.programmingLangs);
+
+    if (js === undefined || php === undefined) {
+        console.log(``);
+        return ``;
+    } else {
+        console.log(`Язык ${programming[0]} изучен на ${js}\nЯзык ${programming[1]} изучен на ${php}`);
+        return `Язык ${programming[0]} изучен на ${js}\nЯзык ${programming[1]} изучен на ${php}`;
     }
-
-    if (integer === 2) {
-        result = '0 1';
-        console.log(result)
-        return result;
-    }
-
-    for(i = 1; i < integer-1; i++) {
-
-        numbersFi.push(numbersFi[i] + numbersFi[i-1]);
-        result = numbersFi.toString();
-        result = result.replace(/,/g, ' ');
-    }
-
-    console.log(result);
-    return result;
 }
 
 
-fib(5)
+showProgrammingLangs(personalPlanPeter)
 
-function fib(num) {
-    if (typeof(num) !== 'number' || num <= 0 || !Number.isInteger(num)) {
-        return "";
-    }
+// 3) Создайте метод showAgeAndLangs внутри объекта personalPlanPeter. При его вызове метод будет принимать в себя объект и возвращать строку в нужном виде.
 
-    let result = '';
-    let first = 0;
-    let second = 1;
+// Пример:
 
-    for (let i = 0; i < num; i++) {
-        if (i + 1 === num) {
-            result += `${first}`;
-            // Без пробела в конце
-        } else {
-            result += `${first} `;
-        }
+// personalPlanPeter.showAgeAndLangs(personalPlanPeter)
+// => 'Мне 29 и я владею языками: RU ENG'
 
-        let third = first + second;
-        first = second;
-        second = third;
-    }
-
-    console.log(result);
-    return result;
-}
-
-fib(5)
-
-// Напишите функцию fib(n) которая возвращает n-е число Фибоначчи.
-
-function fib(n) { 
-    const result = [0, 1];
-
-    for(i = 1; i <= n; i++) {
-        result.push(result[i] + result[i-1]);
-    }
-
-    console.log(result[n]);
- }
-
-fib(3); 
-fib(7); 
-fib(77); // 5527939700884757
+// Заметьте, что возраст и языки подставляются автоматически из объекта, 
+// а языки всегда в верхнем регистре (большими буквами). Если данные в объекте поменяются, то и сообщение тоже изменится.
