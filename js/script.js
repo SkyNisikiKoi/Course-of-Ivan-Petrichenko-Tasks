@@ -910,20 +910,95 @@ const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
 function availableCurr (arr, missingCurr) {
 
     const testEmpty = arr.join();
+    let result = [];
 
     if (testEmpty === '') {
         console.log('Нет доступных валют');
         return 'Нет доступных валют'
     } else {
-         const result = arr.filter(function(item) {
-            item !== missingCurr;
+         result = arr.filter(function(item) {
+            return item !== missingCurr;
         });
-
-        console.log(`Доступные валюты: ${result}`);
-        return `Доступные валюты: ${result}`
     }
 
-    
+    resultTest = [];
+    resultTestSecond = [];
+    value = '';
+
+    // result.forEach(function callback(element) {
+    //     resultTest = baseCurrencies.filter(function(item) {
+    //         return item === element;
+    //     });
+    // });
+
+    // console.log(resultTest);
+
+    result.forEach(function callback(element) {
+        value = additionalCurrencies.filter(function(item) {
+            return item === element;
+        });
+        resultTestSecond.push(value);
+    });
+
+    console.log(resultTestSecond);
+
+
+    console.log(`Доступные валюты: ${result}`);
+    return `Доступные валюты: ${result}`
 }
 
 availableCurr(['UAH', 'RUB', 'CNY'], 'CNY')
+
+// A - arr
+// B - baseCurrencies
+// C - additionalCurrencies
+
+// 1. Берём первый элемент массива A
+// 2. Берём первый элемент массива B
+// 3. Если они совпадают берем следующий элемент массива A, то элемент массива А записываем в конечный результат
+// 4. Если они не совпадают берём второй элемент массива B и сраниваем с первым элементом массива (потворям до тех пор пока не совпадёт или закончится массив B)
+// 5. Если совпадения не было, то повторяем аналогичный сценарий для массива C.
+// 6. Если в массиве C совпадений нет, - удаляем. 
+
+let result = [];
+
+for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < baseCurrencies.length; j++)
+    if (arr[i] === baseCurrencies[j]) {
+        result.push(arr[i])
+    }
+    for(let k = 0; k < additionalCurrencies.length; k++)
+    if (arr[i] === additionalCurrencies[k]) {
+        result.push(arr[i])
+    }
+}
+
+arr.filter(function (itemA) {
+    var inB = false; 
+    baseCurrencies.forEach(function (itemB) {
+      if (itemB == itemA)
+      {
+        inB = true;
+      }
+          });
+  
+    if (inB)
+    {
+      return true;
+    }
+  
+    var inC = false;   
+    
+    additionalCurrencies.forEach(function (itemC) {
+      if (itemC == itemA)
+      {
+        inC = true;
+      }
+          });
+  
+    return inC;
+  });
+
+  arr.filter(function (itemA) {
+    return baseCurrencies.concat(additionalCurrencies).indexOf(iteamA) != -1;
+  });
