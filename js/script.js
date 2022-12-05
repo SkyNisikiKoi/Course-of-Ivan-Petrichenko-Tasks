@@ -864,17 +864,39 @@ const someString = 'This is some strange string';
 
 function reverse(str) {
 
-    const reversed = str.split(' ').reverse();
+    if(typeof (str) === "string") {
+        const reversed = str.split(' ').reverse();
 
-    let lineReversed = '';
+        let lineReversed = '';
+    
+        reversed.forEach(function (item) {
+            lineReversed = lineReversed + ' ' +item.split('').reverse().join('');
+           
+        })
+    
+        lineReversed = lineReversed.trim();
 
-    reversed.forEach(function (item) {
-        lineReversed = lineReversed + " " + item.split('').reverse().join('');
-    })
+        console.log(lineReversed);
+        return lineReversed;
+    } else {
+        console.log("Ошибка!");
+        return "Ошибка!";
+    }
 
-    console.log(lineReversed);
-    return lineReversed;
 }
+
+if (typeof(str) !== 'string') {
+    return "Ошибка!";
+}
+// Самый оптимальный вариант решения
+return str.split('').reverse().join('');
+
+// Решение при помощи цикла
+// let newStr = '';
+// for (let i = str.length - 1; i >= 0; i--) {
+//     newStr += str[i];
+// }
+// return newStr
 
 reverse(someString);
 
@@ -921,33 +943,40 @@ function availableCurr (arr, missingCurr) {
         });
     }
 
-    resultTest = [];
-    resultTestSecond = [];
-    value = '';
+    arr.filter(function (iteam) {
+        return baseCurrencies.concat(additionalCurrencies).indexOf(iteam) != -1;
+      });
 
-    // result.forEach(function callback(element) {
-    //     resultTest = baseCurrencies.filter(function(item) {
-    //         return item === element;
-    //     });
-    // });
+      resultString = result.join('\n')
 
-    // console.log(resultTest);
-
-    result.forEach(function callback(element) {
-        value = additionalCurrencies.filter(function(item) {
-            return item === element;
-        });
-        resultTestSecond.push(value);
-    });
-
-    console.log(resultTestSecond);
-
-
-    console.log(`Доступные валюты: ${result}`);
-    return `Доступные валюты: ${result}`
+    console.log(`Доступные валюты:${'\n'} ${resultString}`);
+    return `Доступные валюты:${'\n'} ${resultString}`
 }
 
 availableCurr(['UAH', 'RUB', 'CNY'], 'CNY')
+
+function availableCurr(arr, missingCurr) {
+    let str = '';
+    arr.length === 0 ? str = 'Нет доступных валют' : str = 'Доступные валюты:\n';
+
+    arr.forEach(function(curr, i) {
+        if (curr !== missingCurr) {
+            str += `${curr}\n`;
+        }
+    });
+
+    // Или
+    // for (let i = 0; i < arr.length; i++) {
+    //     if (arr[i] === missingCurr) {
+    //         continue;
+    //     }
+    //     str += `${arr[i]}\n`;
+    // }
+
+    return str;
+}
+
+availableCurr([...baseCurrencies, ...additionalCurrencies], 'CNY')
 
 // A - arr
 // B - baseCurrencies
